@@ -1,0 +1,241 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.profile-content p strong{
+    display:block;
+
+    font-family:'Barlow Condensed',sans-serif;
+
+    font-size:2rem;
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    color:#fff;
+
+    letter-spacing:2px;
+
+    margin-top:2.5rem;
+    margin-bottom:1rem;
+
+    position:relative;
+
+    padding-bottom:.75rem;
+}
+
+.profile-content p strong::after{
+    content:'';
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:70px;
+    height:4px;
+
+    background:#f97316;
+
+    border-radius:999px;
+}
+
+@keyframes iconFloatGlow {
+    0%,100%{
+        transform:translateY(0);
+        filter:
+            drop-shadow(0 0 4px rgba(249,115,22,.25))
+            drop-shadow(0 0 8px rgba(249,115,22,.15));
+    }
+
+    50%{
+        transform:translateY(-6px);
+        filter:
+            drop-shadow(0 0 10px rgba(249,115,22,.7))
+            drop-shadow(0 0 20px rgba(249,115,22,.45))
+            drop-shadow(0 0 30px rgba(249,115,22,.25));
+    }
+}
+
+.icon-float-glow{
+    animation: iconFloatGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.logo-watermark{
+    animation:logoFloat 8s ease-in-out infinite;
+} 
+
+.profile-content h1,
+.profile-content h2,
+.profile-content h3,
+.profile-content h4,
+.profile-content p strong{
+    font-family:'Barlow Condensed',sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    color:#fff;
+    letter-spacing:2px;
+}
+
+.profile-content{
+    font-size:1.05rem;
+    line-height:1.9;
+}
+.profile-content h2:hover{
+    color:#fb923c;
+    transition:.3s;
+}
+.profile-content h1,
+.profile-content h2,
+.profile-content h3,
+.profile-content h4{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    color:#fff;
+
+    margin-top:2.5rem;
+    margin-bottom:1rem;
+
+    letter-spacing:2px;
+}
+
+.profile-content h2{
+    font-size:2rem;
+    position:relative;
+    padding-bottom:.75rem;
+}
+
+.profile-content h2::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:0;
+
+    width:70px;
+    height:4px;
+
+    background:#f97316;
+    border-radius:999px;
+}
+
+.profile-content p{
+    color:rgba(255,255,255,.75);
+    margin-bottom:1.25rem;
+}
+
+.profile-content ul{
+    margin:1.5rem 0;
+    padding-left:0;
+    list-style:none;
+}
+
+.profile-content ul li{
+    position:relative;
+
+    padding-left:28px;
+    margin-bottom:14px;
+
+    color:rgba(255,255,255,.75);
+}
+
+.profile-content ul li::before{
+    content:'⚽';
+    position:absolute;
+    left:0;
+    top:0;
+}
+
+.profile-content strong{
+    color:#fb923c;
+    font-weight:700;
+}
+
+.profile-content blockquote{
+    margin:2rem 0;
+    padding:1.5rem;
+
+    background:rgba(255,255,255,.04);
+
+    border-left:4px solid #f97316;
+
+    border-radius:16px;
+
+    color:white;
+}
+
+@keyframes pulseGlow {
+    0%,100% {
+        filter:
+            drop-shadow(0 0 4px rgba(249,115,22,.25))
+            drop-shadow(0 0 8px rgba(249,115,22,.15));
+    }
+
+    50% {
+        filter:
+            drop-shadow(0 0 10px rgba(249,115,22,.7))
+            drop-shadow(0 0 20px rgba(249,115,22,.45))
+            drop-shadow(0 0 30px rgba(249,115,22,.25));
+    }
+}
+
+@keyframes imageFloat {
+    0%,100%{
+        transform:scale(1.05);
+    }
+    50%{
+        transform:scale(1.12);
+    }
+}
+
+.achievement-image{
+    animation:imageFloat 5s ease-in-out infinite;
+}
+
+@keyframes achievementImageMove {
+    0% {
+        transform: scale(1.02) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.08) translateY(-6px);
+    }
+
+    100% {
+        transform: scale(1.02) translateY(0);
+    }
+}
+
+.achievement-image {
+    animation: achievementImageMove 4s ease-in-out infinite;
+    will-change: transform;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

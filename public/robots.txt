@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /profile-sekolah
+Allow: /achievements
+Allow: /schedule
+Allow: /agenda
+Allow: /tournament
+Allow: /register
+Allow: /register/beasiswa
+Disallow: /admin
+Disallow: /siswa
+Disallow: /ortu
+
+Sitemap: https://ytss.com/sitemap.xml
