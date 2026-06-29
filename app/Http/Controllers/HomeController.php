@@ -31,11 +31,7 @@ class HomeController extends Controller
 
         $stats = $this->getPortalStats();
         $stats['tournament'] = Tournament::count();
-        dd([
-            'path' => $kelompokKelas->first()->upload_kelompok_kelas,
-            'public_path' => public_path($kelompokKelas->first()->upload_kelompok_kelas),
-            'exists' => file_exists(public_path($kelompokKelas->first()->upload_kelompok_kelas)),
-        ]);
+
         return view('home', compact(
             'kelompokKelas',
             'achievements',
