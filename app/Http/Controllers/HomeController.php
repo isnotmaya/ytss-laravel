@@ -15,29 +15,35 @@ use App\Models\Siswa;
 class HomeController extends Controller
 {
     public function index()
-    {
-        $kelompokKelas = KelompokKelas::all();
-        foreach ($kelompokKelas as $kk) {
-            $kk->banner_exists = !empty($kk->upload_kelompok_kelas) && file_exists(public_path($kk->upload_kelompok_kelas));
-        }
+{
+    $kelompokKelas = KelompokKelas::all();
 
-        $achievements = Achievement::with('kelompokKelas')
-            ->latest()
-            ->take(3)
-            ->get();
-        foreach ($achievements as $ach) {
-            $ach->gambar_exists = !empty($ach->gambar) && file_exists(public_path($ach->gambar));
-        }
+    foreach ($kelompokKelas as $kk) {
 
-        $stats = $this->getPortalStats();
-        $stats['tournament'] = Tournament::count();
-
-        return view('home', compact(
-            'kelompokKelas',
-            'achievements',
-            'stats'
-        ));
+        $kk->banner_exists =
+            !empty($kk->upload_kelompok_kelas)
+            && file_exists(public_path($kk->upload_kelompok_kelas));
     }
+
+    $achievements = Achievement::with('kelompokKelas')
+        ->latest()
+        ->take(3)
+        ->get();
+        foreach ($achievements as $ach) {
+        $ach->gambar_exists =
+            !empty($ach->gambar)
+            && file_exists(public_path($ach->gambar));
+    }
+
+    $stats = $this->getPortalStats();
+    $stats['tournament'] = Tournament::count();
+
+    return view('home', compact(
+        'kelompokKelas',
+        'achievements',
+        'stats'
+    ));
+}
 
     public function achievements()
     {
